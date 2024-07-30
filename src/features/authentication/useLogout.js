@@ -7,8 +7,8 @@ export function useLogout() {
   const { mutate: logout } = useMutation({
     mutationFn: logoutAPI,
     onSuccess: () => {
-      queryClient.invalidateQueries(['user'], { exact: true });
-      queryClient.refetchQueries(['user']);
+      // queryClient.invalidateQueries(['user'], { exact: true });
+      // queryClient.refetchQueries(['user']);
       window.location.reload();
     },
   });
