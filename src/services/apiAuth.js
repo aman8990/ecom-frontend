@@ -58,9 +58,13 @@ export async function checkAuth() {
 
 export async function logout() {
   try {
-    const response = await axios.get(`${baseURL}/api/users/logout`, {
-      withCredentials: true,
-    });
+    const response = await axios.post(
+      `${baseURL}/api/users/logout`,
+      {},
+      {
+        withCredentials: true,
+      },
+    );
 
     return response;
   } catch (error) {
