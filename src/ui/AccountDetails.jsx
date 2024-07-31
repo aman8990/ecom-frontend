@@ -18,7 +18,7 @@ function AccountDetails() {
   const { user, isLoading, isAuthenticated, error } = useAuth();
 
   if (isLoading) return <Spinner />;
-  if (error) return <H1>Error in Fetching User Data</H1>;
+  if (isAuthenticated && error) return <H1>Error in Fetching User Data</H1>;
   if (!isAuthenticated) return <H1>Please login first</H1>;
 
   return (
