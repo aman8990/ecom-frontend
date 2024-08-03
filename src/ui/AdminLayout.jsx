@@ -85,6 +85,7 @@ const H1 = styled.h1`
   }
 
   @media (min-width: 768px) {
+    margin-right: 0;
     font-size: 1.7rem;
     line-height: 1.7rem;
   }
@@ -189,6 +190,7 @@ function AdminLayout() {
         <Div>
           <Logo />
         </Div>
+
         <H1>Admin Panel</H1>
       </Content>
 
