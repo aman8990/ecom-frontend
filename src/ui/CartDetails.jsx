@@ -235,7 +235,7 @@ function CartDetails() {
   }
 
   if (isLoading) return <Spinner />;
-  if (error) return <H1>Error in Fetching Cart</H1>;
+  if (isAuthenticated && error) return <H1>Error in Fetching Cart</H1>;
   if (!cart || cartIsEmpty) return <H1>Your Cart is Empty</H1>;
 
   return (
