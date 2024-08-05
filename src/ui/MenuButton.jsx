@@ -72,7 +72,7 @@ function MenuButtons() {
           <SpinnerMini />
         ) : (
           <>
-            {userRole === 'admin' ? (
+            {isAuthenticated && userRole === 'admin' ? (
               <Button
                 $variation="gray"
                 onClick={() => navigate('/admin/dashboard')}
