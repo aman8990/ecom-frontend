@@ -37,6 +37,8 @@ function MenuButtons() {
   const navigate = useNavigate();
   const userRole = user?.role;
 
+  console.log(isLoading);
+
   useEffect(
     function () {
       if (isSuccess) refetch();
