@@ -6,7 +6,6 @@ export function useAuth() {
     data: user,
     isLoading,
     error,
-    refetch,
   } = useQuery({
     queryKey: ['user'],
     queryFn: checkAuth,
@@ -20,7 +19,6 @@ export function useAuth() {
   return {
     user,
     isLoading,
-    refetch,
     error,
     isAuthenticated: user
       ? user?.role === 'user' || user?.role === 'admin'
