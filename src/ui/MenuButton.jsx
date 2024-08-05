@@ -37,7 +37,7 @@ function MenuButtons() {
   const navigate = useNavigate();
   const userRole = user?.role;
 
-  console.log(isLoading);
+  console.log(user);
 
   useEffect(
     function () {
