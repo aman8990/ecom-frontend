@@ -9,7 +9,7 @@ export function useLogout() {
     onSuccess: () => {
       queryClient.invalidateQueries(['user'], { exact: true });
       queryClient.refetchQueries(['user']);
-      window.location.reload();
+      // window.location.reload();
     },
   });
   return { logout };
