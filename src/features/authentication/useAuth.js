@@ -6,6 +6,7 @@ export function useAuth() {
     data: user,
     isLoading,
     error,
+    isSuccess,
   } = useQuery({
     queryKey: ['user'],
     queryFn: checkAuth,
@@ -16,12 +17,14 @@ export function useAuth() {
     refetchOnReconnect: false,
   });
 
+  const isAuthenticated = isSuccess
+    ? user?.role === 'user' || user?.role === 'admin'
+    : false;
+
   return {
     user,
     isLoading,
     error,
-    isAuthenticated: user
-      ? user?.role === 'user' || user?.role === 'admin'
-      : false,
+    isAuthenticated,
   };
 }
