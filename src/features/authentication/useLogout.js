@@ -10,8 +10,7 @@ export function useLogout() {
     mutationFn: logoutAPI,
     onSuccess: () => {
       // queryClient.invalidateQueries(['user'], { exact: true });
-      // queryClient.refetchQueries(['user']);
-      queryClient.refetchQueries();
+      queryClient.refetchQueries(['user']);
       navigate('/');
     },
   });
