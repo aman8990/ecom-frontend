@@ -4,7 +4,7 @@ import { logout as logoutAPI } from '../../services/apiAuth';
 export function useLogout() {
   const queryClient = useQueryClient();
 
-  const { mutate: logout } = useMutation({
+  const { mutate: logout, isSuccess } = useMutation({
     mutationFn: logoutAPI,
     onSuccess: () => {
       queryClient.invalidateQueries(['user'], { exact: true });
@@ -12,5 +12,5 @@ export function useLogout() {
       // window.location.reload();
     },
   });
-  return { logout };
+  return { logout, isSuccess };
 }

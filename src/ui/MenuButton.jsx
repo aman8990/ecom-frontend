@@ -6,6 +6,7 @@ import Button from './Button';
 import { useAuth } from '../features/authentication/useAuth';
 import { useLogout } from '../features/authentication/useLogout';
 import SpinnerMini from './SpinnerMini';
+import { useEffect } from 'react';
 
 const Container = styled.div`
   display: flex;
@@ -31,12 +32,17 @@ const Container = styled.div`
 `;
 
 function MenuButtons() {
-  const { isAuthenticated, isLoading, user } = useAuth();
-  const { logout } = useLogout();
+  const { isAuthenticated, isLoading, user, refetch } = useAuth();
+  const { logout, isSuccess } = useLogout();
   const navigate = useNavigate();
   const userRole = user?.role;
-  // console.log(userRole);
-  // console.log(isAuthenticated);
+
+  useEffect(
+    function () {
+      if (isSuccess) refetch();
+    },
+    [isSuccess, refetch],
+  );
 
   function handleLogout(e) {
     e.preventDefault();
