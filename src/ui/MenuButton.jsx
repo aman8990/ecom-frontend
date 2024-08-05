@@ -36,7 +36,7 @@ function MenuButtons() {
   const navigate = useNavigate();
   const userRole = user?.role;
   // console.log(userRole);
-  console.log(isAuthenticated);
+  // console.log(isAuthenticated);
 
   function handleLogout(e) {
     e.preventDefault();
